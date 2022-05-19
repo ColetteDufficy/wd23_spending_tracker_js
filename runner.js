@@ -24,6 +24,7 @@ const aldi = new Merchant('Aldi', groceries);
 console.log(aldi);
 
 
+
 // CREATE A NEW TRANSACTION
 const transaction1 = new Transaction(100.55, new Date(2022, 9, 11), tesco);
 const transaction2 = new Transaction(52.36, new Date(2022, 11, 15), asda);
@@ -65,6 +66,10 @@ console.log(account.merchantFilteredTransactions(aldi.name));
 console.log(account.tagFilteredTransactions(petrol.name));
 console.log(account.tagFilteredTransactions(groceries.name));
 
+
+/* An Account should be able to output an array of Transactions that are between a 
+minimum and maximum amount. account.transactionsBetween(5, 10) would return all 
+Transactions with a value between 5 and 10, for example.*/
 
 // console.log(account.transactionsBetween(20, 55));
 account.transactionsBetween(20, 55);

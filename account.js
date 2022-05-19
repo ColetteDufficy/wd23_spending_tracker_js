@@ -2,6 +2,8 @@ const Account = function(name, allTransactions = []) {
     this.name = name;
     this.allTransactions = allTransactions
 }; 
+
+//alternative way of write the constructor function 
 // const Account = function(name) { 
 //     this.name = name;
 //     this.allTransactions = [];
@@ -37,11 +39,13 @@ Account.prototype.tagFilteredTransactions = function(tag) {
 
 
 
-
-Account.prototype.transactionsBetween = function(number1, number2) {
+/* An Account should be able to output an array of Transactions that are between a 
+minimum and maximum amount. account.transactionsBetween(5, 10) would return all 
+Transactions with a value between 5 and 10, for example.*/
+Account.prototype.transactionsBetween = function(num1, num2) {
     let transactionList = []
     for (let i = 0; i < this.allTransactions.length; i++) {
-        if (this.allTransactions[i].amount >= number1 && this.allTransactions[i].amount <= number2) {
+        if (this.allTransactions[i].amount >= num1 && this.allTransactions[i].amount <= num2) {
             transactionList.push(this.allTransactions[i]);
         };
     };
